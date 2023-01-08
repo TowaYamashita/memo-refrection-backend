@@ -1,0 +1,17 @@
+# about exteral tools for php
+/vendor/
+
+# about exteral tools for nodejs
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# about environment
+storage/*.key
+.env
+Homestead.yaml
+Homestead.json
+/.vagrant
+
+# about phpunit
+.phpunit.result.cache
