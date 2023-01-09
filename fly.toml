@@ -1,6 +1,6 @@
-# fly.toml file generated for memo-refrection-backend on 2023-01-08T01:37:07+09:00
+# fly.toml file generated for memo-reflection-backend on 2023-01-09T14:05:42+09:00
 
-app = "memo-refrection-backend"
+app = "memo-reflection-backend"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
@@ -11,11 +11,18 @@ processes = []
     PHP_VERSION = "8.0"
 
 [env]
-  APP_URL = "https://memo-refrection-backend.fly.dev"
   APP_ENV = "production"
   LOG_CHANNEL = "stderr"
   LOG_LEVEL = "info"
   LOG_STDERR_FORMATTER = "Monolog\\Formatter\\JsonFormatter"
+  APP_URL = "https://memo-reflection-backend.fly.dev"
+  DB_CONNECTION = "pgsql"
+  DB_HOST = "memo-reflection.internal"
+  DB_DATABASE= "db1" 
+  DB_PORT = 5432
+
+[deploy]
+  release_command = "php /var/www/html/artisan migrate --force"
 
 [experimental]
   allowed_public_ports = []
