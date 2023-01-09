@@ -16,6 +16,13 @@ processes = []
   LOG_CHANNEL = "stderr"
   LOG_LEVEL = "info"
   LOG_STDERR_FORMATTER = "Monolog\\Formatter\\JsonFormatter"
+  DB_CONNECTION = "pgsql"
+  DB_HOST = "memo-reflection.internal"
+  DB_DATABASE= "memo-refrection-backend" 
+  DB_PORT = 5432
+
+[deploy]
+  release_command = "php /var/www/html/artisan migrate --force"
 
 [experimental]
   allowed_public_ports = []
